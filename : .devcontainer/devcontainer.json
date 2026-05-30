@@ -1,0 +1,17 @@
+{
+  "name": "KDE Plasma Desktop",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "KDE Plasma Desktop (noVNC)",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash /tmp/setup-kde-desktop.sh",
+  "postStartCommand": "bash /tmp/start-kde-desktop.sh",
+  "remoteEnv": {
+    "DISPLAY": ":1",
+    "DBUS_SYSTEM_BUS_ADDRESS": "unix:path=/run/dbus/system_bus_socket"
+  }
+}
